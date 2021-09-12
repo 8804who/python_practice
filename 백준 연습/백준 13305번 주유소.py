@@ -1,8 +1,7 @@
 N = int(input())
 Distance = list(map(int, input().split()))
 OilPrice = list(map(int, input().split()))
-Price = 0
-CityNumber = 0
+Price, CityNumber = 0, 0
 for i in range(len(OilPrice)):
     if i != CityNumber:
         continue
