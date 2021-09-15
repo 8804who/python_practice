@@ -12,17 +12,18 @@ def monty_hall():
     option_list.remove(open_choice)
     if first_choice == correct:
         return True
-        '''답을 안바꾼게 정답인 경우'''
+        # 답을 안바꾼게 정답인 경우
     else:
         return False
-        '''답을 바꾼게 정답인 경우'''
+        # 답을 바꾼게 정답인 경우
 
 
 retain = 0
 change = 0
-for i in range(10000):
+for i in range(10000000000000):
     if monty_hall():
         retain += 1
     else:
         change += 1
 print("답을 유지한게 정답인 경우", retain, "답을 바꾼게 정답인 경우", change)
+print("유지시 정답확률: ", (retain/(retain+change))*100, "바꿀시 정답확률", (change/(retain+change))*100)
