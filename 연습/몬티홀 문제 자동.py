@@ -20,7 +20,7 @@ def monty_hall():
 
 retain = 0
 change = 0
-for i in range(10000000000000):
+for i in range(10000):
     if monty_hall():
         retain += 1
     else:

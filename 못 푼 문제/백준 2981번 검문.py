@@ -2,22 +2,13 @@ import sys
 
 n = int(sys.stdin.readline())
 m = []
+remain = []
 for i in range(n):
     m.append(int(sys.stdin.readline()))
 m.sort()
-divisor = []
-for i in range(2, m[0]+1):
-    div = True
-    for j in divisor:
-        if i % j == 0:
-            div = False
-            break
-    if div:
-        remain = m[0] % i
-        for k in m:
-            print("i는", i, "k는", k, "나머지는", k % i)
-            if k % i != remain:
-                divisor.append(i)
-                break
-            if k == m[-1]:
-                print(i)
+for i in range(1, len(m)+1):
+    remain[i] = m[i] % m[0]
+gfc = 1
+for i in range(len(remain)):
+    if remain[i] % gfc !=0:
+        gfc=
