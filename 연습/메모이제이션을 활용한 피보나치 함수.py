@@ -1,6 +1,6 @@
 import sys
 
-fib = [0] * 41
+fib = [0] * 9999
 
 
 def fibonacci(n):
@@ -16,8 +16,4 @@ def fibonacci(n):
             return fib[n]
 
 
-T = int(sys.stdin.readline())
-
-for i in range(T):
-    N = int(sys.stdin.readline())
-    print(fibonacci(N))
+print(fibonacci(int(sys.stdin.readline())))
