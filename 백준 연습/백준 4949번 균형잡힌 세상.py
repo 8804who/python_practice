@@ -24,7 +24,7 @@ while True:
             if open.pop() == ')':
                 isBalanced = False
                 break
-    if len(string) == 0 and len(open) == 0 and isBalanced:
+    if len(open) == 0 and isBalanced:
         print("yes")
     else:
         print("no")
