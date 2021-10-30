@@ -12,7 +12,7 @@ if name[0] < name[1]:
 else:
     result = "DECREASING"
     for i in range(1, num-1):
-        if name[i]<name[i+1]:
+        if name[i] < name[i+1]:
             result = "NEITHER"
             break
 print(result)
