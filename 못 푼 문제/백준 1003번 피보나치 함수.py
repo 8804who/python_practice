@@ -4,20 +4,16 @@ fib = [[0, 0]] * 40
 
 
 def fibonacci(n):
-    global zero, one
     if n == 0:
-        zero += 1
-        return 0
+        return 1, 0
     elif n == 1:
-        one += 1
-        return 1
+        return 0, 1
     else:
         if fib[n][0] == 0 and fib[n][1] == 0:
-            fib[n][0], fib[n][1] = zero, one
-            return fibonacci(n - 1) + fibonacci(n - 2)
+            fib[n][0], fib[n][1] = fibonacci(n - 1) + fibonacci(n - 2)
+            return fib[n][0], fib[n][1]
         else:
-            zero += fib[n][0]
-            one += fib[n][1]
+            return fib[n][0], fib[n][1]
 
 
 T = int(sys.stdin.readline())
