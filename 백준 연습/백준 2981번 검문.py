@@ -28,6 +28,7 @@ for i in range(1, n-1):
 for i in range(2, int(prev**(1/2))+1):
     if prev % i == 0:
         result.append(i)
+
 length = len(result)
 for i in range(length-1, -1, -1):
     if prev / result[i] != result[i]:
