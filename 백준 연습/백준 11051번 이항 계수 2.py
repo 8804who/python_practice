@@ -15,4 +15,4 @@ n, r = map(int, input().split())
 if r == 0 or r == n:
     print("1")
 else:
-    print((factorial(n)//(factorial(r)*factorial(n-r)))%10007)
+    print((factorial(n)//(factorial(r)*factorial(n-r))) % 10007)
