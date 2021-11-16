@@ -2,8 +2,8 @@ import sys
 from collections import deque
 
 M, N = map(int, sys.stdin.readline().split(" "))
-box = [[0 for i in range(M)] for i in range(N)]
-visited = [[False for i in range(M)] for i in range(N)]
+box = [[0 for _ in range(M)] for _ in range(N)]
+visited = [[False for _ in range(M)] for _ in range(N)]
 move = [[0, 1], [0, -1], [1, 0], [-1, 0]]
 unripe = 0
 day = 0
@@ -19,7 +19,6 @@ for i in range(N):
         if box[i][j] == 1:
             queueX.append(i)
             queueY.append(j)
-
 if unripe > 0:
     while len(queueX) > 0:
         X = queueX.pop()
