@@ -1,7 +1,7 @@
 import sys
 limit_number = 15000
 sys.setrecursionlimit(limit_number)
-fib = [0] * 6437
+fib = [0] * 5000
 
 
 def fibonacci(n):
