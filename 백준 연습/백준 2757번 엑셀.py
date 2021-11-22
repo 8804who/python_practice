@@ -1,9 +1,7 @@
 import sys
 mult = [0 for i in range(7)]
 while True:
-    R, C = map(str, sys.stdin.readline().split("C"))
-    R = int(R[1:])
-    C = int(C)
+    R, C = map(int, sys.stdin.readline()[1:].split("C"))
     if R == 0 and C == 0:
         break
     div = 6
