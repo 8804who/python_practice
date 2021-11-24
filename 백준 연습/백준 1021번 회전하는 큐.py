@@ -7,9 +7,7 @@ popList = list(map(int, input().split()))
 num = 0
 count = 0
 while num < M:
-    for i in range(len(q)):
-        if q[i] == popList[num]:
-            where = i
+    where = q.index(popList[num])
     if where == 0:
         q.popleft()
         num += 1
