@@ -50,13 +50,9 @@ while not gameOver:
         break
 
     for i in range(bodyLength):
-        tempX = snakesBodyX.popleft()
-        tempY = snakesBodyY.popleft()
-        if tempX == headLocationX and tempY == headLocationY:
+        if snakesBodyX[i] == headLocationX and snakesBodyY[i] == headLocationY:
             gameOver = True
             break
-        snakesBodyX.append(tempX)
-        snakesBodyY.append(tempY)
 
     snakesBodyX.append(headLocationX)
     snakesBodyY.append(headLocationY)
