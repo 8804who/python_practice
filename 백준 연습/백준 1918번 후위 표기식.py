@@ -1,6 +1,5 @@
 import sys
 from collections import deque
-par = False
 expression = sys.stdin.readline().strip()
 stack = deque()
 for i in range(len(expression)):
