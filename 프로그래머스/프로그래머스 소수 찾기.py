@@ -18,7 +18,7 @@ def solution(numbers):
             for j in range(len(numbers)):
                 if j not in temp[1]:
                     q.append([int(str(num) + str(numbers[j])), temp[1]+[j]])
-    for i in range(len(nums)):
+    for i in range(int(len(nums)**0.5)):
         n = i + i
         if prime[i]:
             while n < 9876543:
