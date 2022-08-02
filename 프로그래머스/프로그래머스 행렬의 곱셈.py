@@ -8,6 +8,3 @@ def solution(arr1, arr2):
                 answer[i][k] += arr1[i][j] * arr2[j][k]
 
     return answer
-
-
-print(solution([[3, 7], [4, 10], [5, 8], [1, 9]], [[3, 5], [2, 1]]))
