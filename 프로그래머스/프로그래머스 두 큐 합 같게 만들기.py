@@ -26,9 +26,7 @@ def solution(queue1, queue2):
         if sum1 == sum2:
             return answer
         answer += 1
-        if calc1 > lenQueue or calc2 > lenQueue:
-            return -1
-        elif sum1 > sum2:
+        if sum1 > sum2:
             calc1 += 1
             num = q1.popleft()
             sum1 -= num
@@ -40,3 +38,5 @@ def solution(queue1, queue2):
             sum1 += num
             sum2 -= num
             q1.append(num)
+        if calc1 > lenQueue or calc2 > lenQueue:
+            return -1
