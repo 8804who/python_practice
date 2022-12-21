@@ -3,7 +3,7 @@ def solution(arr):
 
     for i in range(len(arr)):
         gcd = getGCD(lcm, arr[i])
-        lcm = (arr[i] // gcd) * (lcm // gcd) * gcd
+        lcm = (arr[i] // gcd) * lcm
 
     return lcm
 
