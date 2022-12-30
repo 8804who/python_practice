@@ -13,7 +13,7 @@ def solution(m, n, puddles):
             if road[x][y] == 0:
                 for i in range(2):
                     prevX, prevY = x + move[i][0], y + move[i][1]
-                    if n > prevX and prevX >= 0 and m > prevY and prevY >= 0:
+                    if n > prevX >= 0 and m > prevY >= 0:
                         dp[x][y] += dp[prevX][prevY] % 1000000007
                         dp[x][y] %= 1000000007
 
