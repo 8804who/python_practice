@@ -3,6 +3,6 @@ def solution(s):
 
     for i in range(len(s)):
         for j in range(i, len(s)+1):
-            if s[i:j]==s[i:j][::-1]:
-                answer=max(answer, len(s[i:j]))
+            if s[i:j] == s[i:j][::-1]:
+                answer = max(answer, len(s[i:j]))
     return answer
