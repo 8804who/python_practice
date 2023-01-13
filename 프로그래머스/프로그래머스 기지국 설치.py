@@ -6,8 +6,7 @@ def solution(n, stations, w):
 
     s = 1
     for i in stations:
-        if i - w > s:
-            answer += math.ceil((i - w - s) / (w * 2 + 1))
+        answer += math.ceil((i - w - s) / (w * 2 + 1))
         s = i + w + 1
     if n > s:
         answer += math.ceil((n - s) / (w * 2 + 1))
