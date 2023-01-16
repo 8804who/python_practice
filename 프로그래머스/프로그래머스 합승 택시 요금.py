@@ -12,7 +12,8 @@ def solution(n, s, a, b, fares):
     for k in range(1, n + 1):
         for i in range(1, n + 1):
             for j in range(1, n + 1):
-                dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j])
+                if dp[i][j] > dp[i][k] + dp[k][j]:
+                    dp[i][j] = dp[i][k] + dp[k][j]
 
     for i in range(1, n + 1):
         total = dp[s][i]
