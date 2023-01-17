@@ -5,20 +5,17 @@ def solution(s):
     answer = 0
     change = 0
     length = len(s)
-    q1 = deque()
-    q2 = deque()
+    q = deque()
+
     stack = deque()
     for i in s:
-        q1.append(i)
+        q.append(i)
 
     while change < length:
-        for i in q1:
-            q2.append(i)
-
         collect = True
 
-        while q2:
-            now = q2.pop()
+        for i in range(length - 1, -1, -1):
+            now = q[i]
             if now == "]" or now == "}" or now == ")":
                 stack.append(now)
             elif now == "[":
@@ -43,8 +40,7 @@ def solution(s):
         if collect and len(stack) == 0:
             answer += 1
 
-        q2.clear()
         stack.clear()
-        q1.append(q1.popleft())
+        q.append(q.popleft())
         change += 1
     return answer
