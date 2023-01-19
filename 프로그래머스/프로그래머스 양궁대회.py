@@ -14,7 +14,6 @@ def solution(n, info):
         if idx == 11:
             apeach = 0
             ryan = 0
-            target = ''
 
             if shot > 0:
                 arr[10] += shot
