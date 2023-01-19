@@ -1,11 +1,10 @@
-from collections import deque
-
-
 def solution(p):
     return change(p)
 
 
 def change(w):
+    if len(w) == 0:
+        return ''
     count = 0
     u = ''
     for i in range(len(w)):
@@ -28,25 +27,13 @@ def change(w):
             correct = False
             break
 
-    if len(v) > 0:
-        if correct:
-            return u + change(v)
-        else:
-            temp = ''
-            for c in u:
-                if c == '(':
-                    temp += ')'
-                else:
-                    temp += '('
-            return '(' + change(v) + ')' + temp[1:-1]
+    if correct:
+        return u + change(v)
     else:
-        if correct:
-            return u
-        else:
-            temp = ''
-            for c in u:
-                if c == '(':
-                    temp += ')'
-                else:
-                    temp += '('
-            return '(' + ')' + temp[1:-1]
+        temp = ''
+        for c in u:
+            if c == '(':
+                temp += ')'
+            else:
+                temp += '('
+        return '(' + change(v) + ')' + temp[1:-1]
