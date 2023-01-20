@@ -38,6 +38,7 @@ def solution(n, t, m, timetable):
         answer=getAnswer(h, mi)
     return answer
 
+
 def getAnswer(h, mi):
     strh=str(h)
     strm=str(mi)
@@ -47,6 +48,7 @@ def getAnswer(h, mi):
         strm='0'+strm
     answer=strh+':'+strm
     return answer
+
 
 def minus1minute(h, mi):
     if mi==0:
