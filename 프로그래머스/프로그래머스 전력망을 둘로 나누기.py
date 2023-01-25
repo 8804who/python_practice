@@ -1,10 +1,6 @@
-from collections import Counter
-
-
 def solution(n, wires):
     answer = n
     wires.sort(key=lambda x: (x[0], x[1]))
-
     for i in range(n - 1):
         parents = [idx for idx in range(n + 1)]
         for j in range(n - 1):
@@ -13,12 +9,12 @@ def solution(n, wires):
             else:
                 union(wires[j][0], wires[j][1], parents)
 
-        new = []
+        count = 0
         for i in range(1, n + 1):
-            new.append(find(i, parents))
-        counter = Counter(new)
-        counter = list(counter.values())
-        answer = min(answer, abs(counter[0] - counter[1]))
+            if find(i, parents) == 1:
+                count += 1
+        diff = abs(n - count * 2)
+        answer = min(answer, diff)
     return answer
 
 
