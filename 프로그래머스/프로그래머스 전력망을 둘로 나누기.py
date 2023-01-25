@@ -10,8 +10,8 @@ def solution(n, wires):
                 union(wires[j][0], wires[j][1], parents)
 
         count = 0
-        for i in range(1, n + 1):
-            if find(i, parents) == 1:
+        for j in range(1, n + 1):
+            if find(j, parents) == 1:
                 count += 1
         diff = abs(n - count * 2)
         answer = min(answer, diff)
