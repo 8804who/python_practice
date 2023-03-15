@@ -6,4 +6,5 @@ dp = [0 for i in range(N+1)]
 
 for n in num:
     dp[n] = dp[n-1]+1
+
 print(N-max(dp))
