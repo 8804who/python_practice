@@ -24,10 +24,8 @@ else:
         else:
             answer += 'a'
             N -= 1
-        if N == 0:
+        if N == 0 or M == 0:
             answer += 'z' * M
-            break
-        if M == 0:
             answer += 'a' * N
             break
     print(answer)
