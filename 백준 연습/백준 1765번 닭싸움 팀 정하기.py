@@ -12,11 +12,9 @@ def union(A, B):
 
 
 def find(A):
-    if friends[A] == A:
-        return A
-    else:
+    if friends[A] != A:
         friends[A] = find(friends[A])
-        return friends[A]
+    return friends[A]
 
 
 def enemys_enemy_is_friend(a, b):
