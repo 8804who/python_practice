@@ -6,7 +6,7 @@ t = int(input())
 for test_case in range(t):
     n = int(input())
     l = list(map(int, input().rstrip().split()))
-
+    l.sort()
     d = defaultdict(int)
 
     answer = True
