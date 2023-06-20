@@ -2,16 +2,6 @@ import sys
 from bisect import bisect_right
 
 
-def union(a, b):
-    A = find(a)
-    B = find(b)
-
-    if A >= B:
-        parent[B] = A
-    else:
-        parent[A] = B
-
-
 def find(a):
     if a != parent[a]:
         parent[a] = find(parent[a])
@@ -31,4 +21,6 @@ for cs_card in cs_cards:
     num = bisect_right(cards, cs_card)
     print(cards[find(num)])
     if find(num)+1 < M:
-        union(find(num), find(num)+1)
+        A = find(num)
+        B = find(num)+1
+        parent[A] = B
