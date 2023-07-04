@@ -1,6 +1,5 @@
 import sys
 from collections import deque
-sys.setrecursionlimit(int(1e5))
 
 
 def make_tree(node, d):
@@ -33,7 +32,7 @@ stack = deque()
 log = []
 node = 0
 
-for char in sys.stdin.readline()[:-2]:
+for char in sys.stdin.readline().rstrip()[:-1]:
     if char == '0':
         node += 1
         stack.append(node)
