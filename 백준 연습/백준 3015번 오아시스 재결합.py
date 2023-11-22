@@ -8,8 +8,7 @@ answer = 0
 
 for height in heights[::-1]:
     while stack and stack[-1][0] < height:
-        answer += stack[-1][1]
-        stack.pop()
+        answer += stack.pop()[1]
 
     if stack and stack[-1][0] == height:
         answer += stack[-1][1]
