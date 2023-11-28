@@ -11,9 +11,7 @@ def makeTree(left, right, n):
         return tree[n]
 
     mid = (left+right)//2
-    left_value = makeTree(left, mid, n*2)
-    right_value = makeTree(mid+1, right, n*2+1)
-    tree[n] = left_value+right_value
+    tree[n] = makeTree(left, mid, n*2)+makeTree(mid+1, right, n*2+1)
     return tree[n]
 
 
