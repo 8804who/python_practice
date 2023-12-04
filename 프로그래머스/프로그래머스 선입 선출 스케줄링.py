@@ -23,8 +23,8 @@ def solution(n, cores):
         if time % core != 0:
             n -= 1
 
-    for i in range(1, len(cores)):
-        if time % cores[i] == 0:
+    for idx in range(1, len(cores)):
+        if time % cores[idx] == 0:
             n -= 1
             if n == 0:
-                return i
+                return idx
