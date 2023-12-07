@@ -3,17 +3,13 @@ import sys
 sys.setrecursionlimit(300000)
 
 
-def dfs(node, visit, graph, a):
-    answer = 0
+def dfs(node, visit, graph, a, answer):
     for next_node in graph[node]:
         if not visit[next_node]:
             visit[next_node] = True
-            answer += dfs(next_node, visit, graph, a)
+            answer += dfs(next_node, visit, graph, a, 0)
             a[node] += a[next_node]
-            if a[next_node] > 0:
-                answer += a[next_node]
-            else:
-                answer -= a[next_node]
+            answer += abs(a[next_node])
     return answer
 
 
@@ -27,4 +23,4 @@ def solution(a, edges):
         graph[edge[0]].append(edge[1])
         graph[edge[1]].append(edge[0])
 
-    return dfs(0, visit, graph, a)
+    return dfs(0, visit, graph, a, 0)
