@@ -10,8 +10,7 @@ class tree_node:
         self.right_limit = right_limit
 
 
-def preorder(node, graph):
-    pre = []
+def preorder(node, graph, pre):
     q = [node]
     while q:
         node = q.pop()
@@ -57,4 +56,4 @@ def solution(nodeinfo):
                 break
             else:
                 parent.pop(0)  # 해당 노드의 자녀가 아님
-    return [preorder(head, graph), postorder(head, graph, [])]
+    return [preorder(head, graph, []), postorder(head, graph, [])]
