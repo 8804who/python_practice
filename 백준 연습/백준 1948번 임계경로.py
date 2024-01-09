@@ -33,15 +33,15 @@ while q:
 
 q = deque([[destination, longest_time[destination]]])
 count = 0
-visit = [False] * (n+1)
+visits = [False] * (n+1)
 
 while q:
     city, time = q.popleft()
     for s, t in reversed_graph[city]:
         if time-t == longest_time[s]:
             count += 1
-            if not visit[s]:
+            if not visits[s]:
                 q.append([s, time-t])
-                visit[s] = True
+                visits[s] = True
 
 print(longest_time[destination], count, sep='\n')
