@@ -16,7 +16,6 @@ def dfs(idx, banned_list, suspect_list):
                 case.add(str(sorted(banned_list + [banned_id])))
             else:
                 dfs(idx - 1, banned_list + [banned_id], suspect_list)
-    return len(case)
 
 
 def solution(user_id, banned_id):
@@ -28,5 +27,5 @@ def solution(user_id, banned_id):
         for user in user_id:
             if check(banned_id[i], user):
                 suspect_list[i].append(user)
-
-    return dfs(len(banned_id) - 1, [], suspect_list)
+    dfs(len(suspect_list) - 1, banned_id, suspect_list)
+    return len(case)
