@@ -16,5 +16,4 @@ def solution(sequence):
             answer = n1
         if answer < n2:
             answer = n2
-
     return answer
