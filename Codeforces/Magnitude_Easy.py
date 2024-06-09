@@ -9,6 +9,9 @@ for testcase in range(t):
     min_n = 0
     max_n = 0
 
+    n1 = 1
+    n2 = 1
+
     for i in range(n):
         min_n += arr[i]
         max_n += arr[i]
@@ -16,4 +19,6 @@ for testcase in range(t):
             max_n *= -1
         if -min_n > max_n:
             max_n = -min_n
-    print(max_n)
+
+
+    print(n1, n2)
