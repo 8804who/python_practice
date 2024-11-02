@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=D:\공부\컴퓨터공학\프로그래밍\파이썬\연습\venv"
+@set "VIRTUAL_ENV=D:\공부\컴퓨터공학\프로그래밍\PS\python_practice\venv"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (
