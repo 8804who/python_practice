@@ -1,27 +1,20 @@
-from collections import deque
 import sys
+import heapq
+
 input = sys.stdin.readline
+N = int(input())
+meeting = []
+nowRoom = []
 
-N, M = map(int, input().split())
+for i in range(N):
+    meeting.append(tuple(map(int, input().split())))
+meeting.sort()
+maxMeetingRoomCount = 0
 
-topology = [0] * (N+1)
-graph = [[] for _ in range(N+1)]
-
-for _ in range(M):
-    A, B = map(int, input().split())
-    graph[A].append(B)
-    topology[B] += 1
-
-q = deque()
-
-for i in range(1, N+1):
-    if topology[i] == 0:
-        q.append(i)
-
-while q:
-    num = q.popleft()
-    print(num, end=' ')
-    for next_num in graph[num]:
-        topology[next_num] -= 1
-        if topology[next_num] == 0:
-            q.append(next_num)
+for s, e in meeting:
+    while nowRoom and nowRoom[0] <= s:
+        heapq.heappop(nowRoom)
+    heapq.heappush(nowRoom, e)
+    if maxMeetingRoomCount < len(nowRoom):
+        maxMeetingRoomCount = len(nowRoom)
+print(maxMeetingRoomCount)
