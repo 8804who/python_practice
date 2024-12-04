@@ -21,5 +21,4 @@ for _ in range(T):
                 books[i] = True
                 ans += 1
                 break
-
     print(ans)
