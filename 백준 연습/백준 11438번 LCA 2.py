@@ -6,9 +6,9 @@ N = int(input())
 
 maxlevel = math.ceil(math.log2(N))+1
 
-graph = [[] for _ in range(N+1)]
-depth = [-1 for _ in range(N+1)]
-parent = [[0 for _ in range(maxlevel)] for _ in range(N+1)]
+graph = [[] for _ in range(N+1)] # 각 노드의 연결 노드
+depth = [-1 for _ in range(N+1)] # 각 노드의 깊이
+parent = [[0 for _ in range(maxlevel)] for _ in range(N+1)] # 조상 노드 리스트
 
 for i in range(N-1):
     n1, n2 = map(int, input().split())
@@ -29,7 +29,7 @@ def makeTree(node, d):
 def set_parent():
     for i in range(1, maxlevel):
         for j in range(1, N+1):
-            parent[j][i] = parent[parent[j][i-1]][i-1]
+            parent[j][i] = parent[parent[j][i-1]][i-1] # 각 노드의 2^i번째 조상
 
 
 makeTree(1, 0)

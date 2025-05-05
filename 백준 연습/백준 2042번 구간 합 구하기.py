@@ -23,9 +23,9 @@ def Query(s, e, left, right, n):
 
 
 def Change(s, e, idx, dif, n):
-    if idx < s or idx > e:
+    if idx < s or idx > e: # 범위를 벗어난 경우
         return 0
-    tree[n] -= dif
+    tree[n] -= dif # 해당 구간의 값에서 diff를 
     if s != e:
         mid = (s+e)//2
         Change(s, mid, idx, dif, n*2)
