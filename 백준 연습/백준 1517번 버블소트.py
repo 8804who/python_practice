@@ -31,7 +31,7 @@ def update(start, end, idx, n):
 
 N = int(input())
 A = list(map(int, input().split()))
- 
+
 idx_A = sorted(range(N),key=lambda i:A[i])
 tree = [0] * (N*4)
 answer = 0
