@@ -12,7 +12,6 @@ for i in range(-N, N+1):
             for x in range(M):
                 if i == 0 and j == 0:
                     num_set.add(int(nums[i][j]))
-                    num_set.add(int(nums[i][j][::-1]))
                     continue
                 t_i = y
                 t_j = x
@@ -20,7 +19,6 @@ for i in range(-N, N+1):
                 while True:
                     num += nums[t_i][t_j]
                     num_set.add(int(num))
-                    num_set.add(int(num[::-1]))
                     if 0 <= t_i + i and t_i + i < N:
                         t_i += i
                     else:
